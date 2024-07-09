@@ -1,0 +1,66 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/static/css/mainPage.css" rel="stylesheet">
+<script SRC="/static/js/nav.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Responsive Sticky Navbar</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   </head>
+<body>
+    {% include 'navNormal.html' %}
+    <div style="text-align: center;">
+      <hr>
+      <a href="/info/main" style="color: black; text-decoration: none;"><h1>学校简介</h1></a>
+      <hr>
+   </div>
+    <div class="content">
+    
+      <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-3">
+               <div class="card" style="width: auto;">
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item"><a href="/info/geo" style="color: black;">地球科学与技术学院</a></li>
+                     <li class="list-group-item"><a href="/info/petroleum" style="color: black;">石油工程学院</a></li>
+                     <li class="list-group-item"><a href="/info/chem" style="color: black;">化学化工学院</a></li>
+                     <li class="list-group-item"><a href="/info/mee" style="color: black;">机电工程学院</a></li>
+                     <li class="list-group-item"><a href="/info/pipeline" style="color: black;">储运与建筑工程学院</a></li>
+                     <li class="list-group-item"><a href="/info/materials" style="color: black;">材料科学与工程学院</a></li>
+                     <li class="list-group-item"><a href="/info/newenergy" style="color: black;">石大山能新能源学院</a></li>
+                     <li class="list-group-item"><a href="/info/ocean" style="color: black;">海洋与空间信息学院</a></li>
+                     <li class="list-group-item"><a href="/info/auto" style="color: black;">控制科学与工程学院</a></li>
+                     <li class="list-group-item"><a href="/info/computer" style="color: black;">青岛软件学院、计算机科学与技术学院</a></li>
+                     <li class="list-group-item"><a href="/info/sci" style="color: black;">理学院</a></li>
+                     <li class="list-group-item"><a href="/info/sem" style="color: black;">经济管理学院</a></li>
+                     <li class="list-group-item"><a href="/info/sfs" style="color: black;">外国语学院</a></li>
+                     <li class="list-group-item"><a href="/info/shl" style="color: black;">文法学院</a></li>
+                     <li class="list-group-item"><a href="/info/max" style="color: black;">马克思主义学院</a></li>
+                     
+                    
+
+                  </ul>
+                </div>
+             </div>
+             <div class="col-md-9">
+               <div class="card">
+                  <div class="card-body">
+                     {{ data }}
+                  </div>   
+                </div>
+         </div>
+     </div>
+
+    </div>
+   
+</body>
+</html>

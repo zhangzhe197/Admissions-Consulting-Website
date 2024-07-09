@@ -1,0 +1,95 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script SRC="/static/js/mainPage.js"></script>
+<script src="/static/js/onepage.js"></script>
+<link rel="stylesheet" href="/static/css/cssOnepage.css">
+<script src="/static/js/jquery-1.11.0.min.js"></script>  
+<link href="/static/css/mainPage.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/all.min.css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Responsive Sticky Navbar</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   </head>
+   <style>
+    nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.517);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+.sign {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #fff; /* 设置文字颜色为白色 */
+        padding: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .bottom-left {
+        background-color: black;
+        color: white;
+        padding: 10px;
+    }
+
+
+   </style>
+   <body>
+    
+      <div class="wrapper">
+         {% include 'nav.html' %}
+         
+          <div id="view">
+            <div id="frame">
+              <div class="op-section" style="position: relative;">
+                <div class="sign">
+                  <h1 style="font-size: 15vh; bottom: 50%;">欢迎报考</h1><h1 style="font-size: 8vh;">中国石油大学(华东)</h1></div>
+              </div>
+              <div class="op-section second" style="position: relative;">
+               <div class="sign">
+                <h1 style="font-size: 15vh;">33个</h1><h1 style="font-size: 8vh;">硕士学位授权一级学科</h1>
+                <h1 style="font-size: 15vh;">60个</h1><h1 style="font-size: 8vh;">本科招生专业</h1></div></div> 
+              </div>
+              <div class="op-section third" style=" position: relative;">
+                <div class="sign">
+                  <h1 style="font-size:  10vw;">面向大海, 心向未来</h1>
+                </div>
+            </div>
+            
+            
+            </div>
+          </div>
+          
+             
+      </div>
+   </body>
+   <script>
+    $(document).ready(function(){
+  startOnePage({
+    frame: "#view",
+    container: "#frame",
+    sections: ".op-section",
+    radio: "#radio",
+    radioOn: "#radioOn",
+    speed: 500,
+    easing: "swing"
+  });
+});     
+   </script>
+</html>

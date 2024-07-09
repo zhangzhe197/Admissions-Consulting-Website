@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中国石油大学(华东) 本科招生咨询</title>
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link href=/static/css/bootstrap.min.css rel="stylesheet">
+</head>
+<style>
+  /* 你提供的 CSS 样式 */
+  
+  body {
+    /* 将纯色背景替换为图片背景 */
+   
+    /* 设置背景大小和重复方式 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/static/background.jpg);
+    background-color: transparent; /* 清除原先的背景色 */
+  }
+  
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      background: #eee;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+  
+  .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+  }
+  
+  
+  .main {
+      background-color: #eee;
+      width: 75vw;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 6px 0px 0px 0px;
+  }
+  
+  .scroll {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      height: 70vh;
+  }
+  
+  .img1 {
+      border-radius: 50%;
+      background-color: #66BB6A;
+  }
+  
+  .name {
+      font-size: 8px;
+  }
+  
+  .msg {
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      font-weight: 500;
+      color: #3e3c3c;
+  }
+  
+  .between {
+      font-size: 8px;
+      font-weight: 500;
+      color: #a09e9e;
+  }
+  
+  .navbar {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .form-control {
+      font-size: 12px;
+      font-weight: 400;
+      height: 30px;
+      width: 80%;
+      border: none;
+  }
+  
+  form-control:focus {
+      box-shadow: none;
+      overflow: hidden;
+      border: none;
+      width: 80%;
+  }
+  
+  .icon1 {
+      color: #7C4DFF !important;
+      font-size: 18px !important;
+      cursor: pointer;
+  }
+  
+  .icon2 {
+      color: #512DA8 !important;
+      font-size: 18px !important;
+      position: relative;
+      left: 8px;
+      padding: 0px;
+      cursor: pointer;
+  }
+  
+  .icondiv {
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      padding: 2px;
+      position: relative;
+      bottom: 1px;
+  }
+  .padding{
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  </style>
+<body>
+    <div class="mb-3 padding">
+            <i class="fas fa-arrow-left fa-2x" onclick="history.go(-1)"></i> 
+       
+    </div>
+  <div class="d-flex justify-content-center container">
+    
+    <div class="wrapper">
+        <div class="main">
+            
+            <div class="px-2 scroll" id="messages">
+                
+                
+            </div>
+            <nav class="navbar bg-white navbar-expand-sm d-flex justify-content-between"> <input type="text number" name="text" class="form-control" placeholder="Type a message..." id="message_input"  oninput="checkInput()">
+                <div style="width: 10px;"></div><!-- 添加空隙 -->
+              <button onclick="sendMessage('{{ User_scenario }}')" class="btn btn-primary" id="sendButton" disabled>Send</button>
+                <div class="icondiv d-flex justify-content-end align-content-center text-center ml-2"> </div>
+            </nav>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="{{ url_for('static', filename='./js/chat.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/static/css/mainPage.css" rel="stylesheet">
+<script SRC="/static/js/nav.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>本科生招生</title>
+   </head>
+   <style>
+    .left-column, .right-column {
+        flex-basis: 50%;
+        padding: 20px;
+    }
+   </style>
+<body>
+    {% include 'navNormal.html' %}
+    <div>
+        <hr>
+        <div style="display: flex; justify-content: space-between;">
+            <a class="pl-3" onclick="goBack()"><p><<返回</p></a>
+            <a href="/undergraduate" style="margin: auto; color: black; text-decoration: none;"><h1>详细信息</h1></a>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                {% with under_info = {'under_notice':'通知公告', 'under_art':'艺术类招生','under_sport':'高水平运动员','under_CEA':'综合评价招生','under_special':'高校专项计划'} %}
+              <h5 class="card-title">{{ under_info[type] }}</h5> 
+                 {% endwith %}
+              <em class="card-subtitle mb-2 text-muted">announcement</em>
+              <ul class="list-group list-group-flush">
+                
+                {% for item in announcement %}
+                <a href="/reader/{{item[0]}}">
+               <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                </a>
+                {% endfor %}
+              </ul>
+            </div>
+        </div>
+     </div>
+    
+    <script>
+        function goBack() {
+        window.history.go(-1);
+        }
+
+    </script>
+</body>

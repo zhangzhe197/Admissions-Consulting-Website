@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    color: #fff;
+    }
+.op-section{background-image:url(/static/1.jpg);
+    background-size: auto 100%; /* 自动宽度，高度铺满 */
+    background-repeat: no-repeat; /* 不重复显示背景图片 */
+    background-position: center center; /* 居中显示 */
+}
+.second{background-image:url(/static/2.jpg);}
+.third{background-image:url(/static/3.jpg);}

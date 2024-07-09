@@ -1,0 +1,113 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/static/css/mainPage.css" rel="stylesheet">
+<script SRC="/static/js/nav.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>本科生招生</title>
+   </head>
+   <style>
+    .left-column, .right-column {
+        flex-basis: 50%;
+        padding: 20px;
+    }
+   </style>
+<body>
+    {% include 'navNormal.html' %}
+    <div style="text-align: center;">
+        <hr>
+        <a href="/undergraduate" style="color: black; text-decoration: none;"><h1>本科生招生</h1></a>
+        <hr>
+     </div>
+     <div class="container">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">通知公告</h5>
+              <em class="card-subtitle mb-2 text-muted">announcement</em>
+              <ul class="list-group list-group-flush">
+                {% for item in announcement %}
+                <a href="/reader/{{item[0]}}">
+               <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                </a>
+                {% endfor %}
+                <a href="/undergraduate/notice" style="text-align: right;"><em>>>更多</em></a>
+              </ul>
+            </div>
+        </div>
+     </div>
+     <div class="container pt-5">
+     <h1>特殊类型招生</h1>
+     <hr></div>
+    <div class="container" style="display: flex;">
+        
+        <div class="left-column">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">综合评价招生</h5>
+                  <ul class="list-group list-group-flush">
+                    {% for item in CEA %}
+                    <a href="/reader/{{item[0]}}">
+                   <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                    </a>
+                    {% endfor %}
+                    <a href="/undergraduate/CEA" style="text-align: right;"><em>>>更多</em></a>
+                  </ul>
+                </div>
+            </div>
+
+            <br>
+            <div class="card " style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">艺术类</h5>
+                  <ul class="list-group list-group-flush">
+                    {% for item in art %}
+                    <a href="/reader/{{item[0]}}">
+                    <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                    </a>
+                    {% endfor %}
+                    <a href="/undergraduate/art" style="text-align: right;"><em>>>更多</em></a>
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                      <h5 class="card-title">高校专项</h5>
+                      <ul class="list-group list-group-flush">
+                        {% for item in special %}
+                        <a href="/reader/{{item[0]}}">
+                       <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                        </a>
+                        {% endfor %}
+                        <a href="/undergraduate/special" style="text-align: right;"><em>>>更多</em></a>
+                      </ul>
+                    </div>
+                </div>
+            <br>
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">高水平运动员</h5>
+                  <ul class="list-group list-group-flush">
+                    {% for item in sport %}
+                    <a href="/reader/{{item[0]}}">
+                   <li class="list-group-item" style="color: black;">{{item[1]}}</li>
+                    </a>
+                    {% endfor %}
+                    <a href="/undergraduate/sport" style="text-align: right;"><em>>>更多</em></a>
+                  </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

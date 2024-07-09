@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Chat App</title>
+</head>
+<body>
+    <ul id="messages"></ul>
+    <input id="message_input" autocomplete="off" /><button onclick="sendMessage()">Send</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        
+      var socket = io.connect('http://' + document.domain + ':' + location.port);
+      var pointer_to_add;
+          socket.on('New_conversation', function(role) { // 添加事件名称和回调函数
+              var ul = document.getElementById("messages");
+              pointer_to_add = document.createElement("li");
+              pointer_to_add.classList.add(role)
+              ul.appendChild(pointer_to_add);
+          });
+          socket.on('message', function(data) {
+          pointer_to_add.innerHTML += data
+      });
+
+      function sendMessage() {
+        var message = document.getElementById("message_input").value;
+        socket.emit('message', message);
+        document.getElementById("message_input").value = '';
+                  
+      }
+
+    </script>
+</body>
+</html>
